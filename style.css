@@ -19,10 +19,6 @@ header {
 .header-text {
   line-height: 1rem;
 }
-h1 {
-  height: 1rem;
-  margin: 1rem;
-}
 .profile-image {
   width: 10%;
   border-radius: 50%;
@@ -64,16 +60,11 @@ h2 {
   bottom: 0;
   padding: 10px;
 }
-.contact-info a {
-  color: #4caf50;
-  text-decoration: none;
+#contact-info p {
+  margin: .5rem 0;
 }
 .contact-info a:hover {
   text-decoration: underline;
-}
-.contact-info p {
-  position: absolute;
-  top: 0;
 }
 footer {
   background-color: #4caf50;
@@ -98,8 +89,10 @@ footer {
   header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+    gap: 3rem;
+    padding-left:1rem;
   }
   .profile-image {
     width: 20%;
@@ -114,6 +107,6 @@ footer {
   height: 10rem;
 }
 footer {
-  padding: 1px;
+ height: 2.5rem;
 }
 }
