@@ -16,6 +16,9 @@ header {
   align-items: center;
   padding-bottom: 1rem;
 }
+.header-text {
+  line-height: 1rem;
+}
 h1 {
   height: 1rem;
   margin: 1rem;
