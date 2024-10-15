@@ -102,13 +102,13 @@ footer {
     align-items: center;
   }
   .profile-image {
-    width: 18%;
+    width: 20%;
   }
   .share-icon {
     width: 6%;
   }
   .social-icon {
-    width: 6%;
+    width: 10%;
   }
   #contact-info {
   height: 10rem;
