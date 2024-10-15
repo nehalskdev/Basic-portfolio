@@ -14,7 +14,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: center;
   padding-bottom: 1rem;
 }
 h1 {
@@ -87,4 +86,28 @@ footer {
   text-align: center;
   position: relative;
   top: 0;
+}
+
+@media (max-width: 460px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .profile-image {
+    width: 18%;
+  }
+  .share-icon {
+    width: 6%;
+  }
+  .social-icon {
+    width: 6%;
+  }
+  #contact-info {
+  height: 10rem;
+}
+footer {
+  padding: 1px;
+}
 }
