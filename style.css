@@ -87,6 +87,9 @@ footer {
   position: relative;
   top: 0;
 }
+.social-icon:hover {
+  scale: 1.2;
+}
 
 @media (max-width: 460px) {
   header {
