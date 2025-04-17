@@ -121,3 +121,55 @@ document.addEventListener("DOMContentLoaded", function () {
     "footer p"
   ).innerHTML = `&copy; ${yearSpan.textContent} Nehal Shaikh. All rights reserved.`;
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const aboutMeText = `👋 I'm Nehal Shaikh, a dedicated Javascript enthusiast on a mission to harness the power of coding for transformative digital experiences. With a rich background of three years in data management within the non-IT sector, I'm now embarking on an exciting journey towards frontend development.
+
+Driven by a fervent passion for technology and a relentless pursuit of excellence, I'm immersing myself in the dynamic world of web development. Every line of code I write is fueled by a desire to craft seamless user interfaces, elevate user experiences, and push the boundaries of innovation.
+
+As I pave my path in frontend development, I bring with me a wealth of problem-solving skills, attention to detail, and a knack for optimizing processes. I thrive in collaborative environments and am eager to contribute my expertise to projects that challenge and inspire growth.
+
+Join me on this exhilarating journey as I continue to learn, grow, and make an impact in the world of frontend development. Let's connect, collaborate, and create something extraordinary together! 💻✨.`;
+
+  const typingElement = document.getElementById("typing-text");
+  const typingButton = document.querySelector(".typing-trigger");
+  let i = 0;
+  const speed = 20;
+
+  typingButton.addEventListener("click", function () {
+    this.classList.add("hide");
+
+    // Show typing text container
+    setTimeout(() => {
+      typingElement.classList.add("show");
+      typingElement.style.borderRight = "3px solid var(--primary-color)";
+      typeWriter();
+    }, 800);
+
+    const keyboardSound = new Audio("./assets/Click sound.wav");
+    keyboardSound.volume = 0.2;
+    keyboardSound.play();
+  });
+
+  function typeWriter() {
+    if (i < aboutMeText.length) {
+      typingElement.innerHTML = aboutMeText.substring(0, i + 1);
+      i++;
+
+      // Random speed variation for natural typing
+      const randomSpeed = speed + (Math.random() * 20 - 10);
+      setTimeout(typeWriter, randomSpeed);
+
+      // Auto-scroll to keep text in view
+      if (i % 100 === 0) {
+        typingElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    } else {
+      // Animation complete
+      typingElement.style.borderRight = "none";
+
+      // Add completion effect
+      typingElement.classList.add("completed");
+    }
+  }
+});

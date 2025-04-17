@@ -147,6 +147,229 @@ section {
 h2 {
   color: #4caf50;
 }
+
+/* Typing animation styles */
+#typing-text {
+  border-right: 3px solid var(--primary-color);
+  white-space: pre-wrap;
+  overflow: hidden;
+  font-family: "Fira Code", monospace;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+#start-typing {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+/*Typing container */
+.typing-container {
+  position: relative;
+  min-height: 300px;
+}
+
+/* ===== Typing Trigger Button ===== */
+.typing-trigger {
+  /* Positioning */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Visual Styling */
+  background: linear-gradient(135deg, #4caf50, #3a8c40);
+  color: white;
+  border: none;
+  padding: 18px 36px;
+  border-radius: 50px;
+  cursor: pointer;
+
+  /* Typography */
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  /* Effects */
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  overflow: hidden;
+
+  /* 3D Effect */
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+/* Button Content */
+.typing-trigger .button-text {
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.typing-trigger .button-icon {
+  font-size: 1.4rem;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: inline-block;
+}
+
+/* Shine Effect */
+.typing-trigger::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: 0.7s;
+}
+
+/* Hover States */
+.typing-trigger:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 15px 35px rgba(76, 175, 80, 0.5);
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+}
+
+.typing-trigger:hover .button-text {
+  transform: translateX(5px);
+}
+
+.typing-trigger:hover .button-icon {
+  transform: rotate(10deg) scale(1.3);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.typing-trigger:hover::before {
+  left: 100%;
+}
+
+/* Active/Pressed State */
+.typing-trigger:active {
+  transform: translate(-50%, -50%) scale(0.98);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.6);
+  transition: all 0.2s ease;
+}
+
+/* Button Exit Animation */
+.typing-trigger.hide {
+  animation: buttonExit 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes buttonExit {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -180%) scale(0.4);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Pulse Animation (Optional - can add to button when page loads) */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .typing-trigger {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+
+  .typing-trigger .button-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-trigger {
+    padding: 12px 24px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Button exit animation */
+.typing-trigger.hide {
+  animation: buttonExit 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes buttonExit {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -150%) scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Typing text appearance animation */
+#typing-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#typing-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary-color);
+  }
+}
 .projects {
   display: flex;
   flex-wrap: wrap;
