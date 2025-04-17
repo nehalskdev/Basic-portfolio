@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   themeToggleBtn.innerHTML = "🌙";
   themeToggleBtn.title = "Toggle Dark Mode";
   themeToggleBtn.style.position = "fixed";
-  themeToggleBtn.style.top = "20px";
+  themeToggleBtn.style.top = "70px";
   themeToggleBtn.style.right = "20px";
   themeToggleBtn.style.zIndex = "1000";
   themeToggleBtn.style.background = "transparent";
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : "light");
   if (currentTheme === "dark") {
     document.body.classList.add("dark-theme");
-    themeToggleBtn.innerHTML = "🌞";
+    themeToggleBtn.innerHTML = "☀️";
   }
 
   themeToggleBtn.addEventListener("click", function () {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ? "dark"
       : "light";
     localStorage.setItem("theme", theme);
-    themeToggleBtn.innerHTML = theme === "dark" ? "🌞" : "🌙";
+    themeToggleBtn.innerHTML = theme === "dark" ? "☀️" : "🌙";
   });
 
   let lastScrollPosition = 0;
@@ -174,4 +174,25 @@ Join me on this exhilarating journey as I continue to learn, grow, and make an i
       typingElement.classList.add("completed");
     }
   }
+});
+
+// download pdf feat
+
+// Add pulse animation when page loads
+document.addEventListener("DOMContentLoaded", function () {
+  const resumeBtn = document.querySelector(".resume-download-btn");
+
+  // Add pulse animation for 6 seconds
+  resumeBtn.classList.add("pulse");
+  setTimeout(() => {
+    resumeBtn.classList.remove("pulse");
+  }, 6000);
+
+  // Click tracking (optional)
+  resumeBtn.addEventListener("click", function () {
+    console.log("Resume downloaded");
+    const keyboardSound = new Audio("./assets/Click sound.wav");
+    keyboardSound.volume = 0.2;
+    keyboardSound.play();
+  });
 });
