@@ -40,6 +40,39 @@ header {
   overflow: hidden;
   transition: all 0.5s ease;
 }
+
+header::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(76, 175, 80, 0.2) 0%,
+    rgba(76, 175, 80, 0) 70%
+  );
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle,
+    rgba(76, 175, 80, 0.15) 0%,
+    rgba(76, 175, 80, 0) 70%
+  );
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out 2s;
+}
+
 .header-text {
   line-height: 1rem;
 }
