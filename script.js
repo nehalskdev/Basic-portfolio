@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : "light");
   if (currentTheme === "dark") {
     document.body.classList.add("dark-theme");
-    themeToggleBtn.innerHTML = "☀️";
+    themeToggleBtn.innerHTML = "🌞";
   }
 
   // Theme toggle button click handler
