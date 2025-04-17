@@ -9,7 +9,6 @@
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Dark theme variables */
 .dark-theme {
   --text-color: #e0e0e0;
   --bg-color: #121212;
@@ -48,7 +47,6 @@ header {
   object-fit: cover;
 }
 .container {
-  /* height: 155vh; */
   width: 80%;
   margin: 0 auto;
   padding: 10px;
