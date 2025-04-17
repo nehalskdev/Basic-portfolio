@@ -185,11 +185,6 @@ footer {
   .skills-container {
     flex-direction: column;
   }
-
-  .skill-category {
-    min-width: 100%;
-  }
-
   .skill-items {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
