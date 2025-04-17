@@ -98,6 +98,12 @@ header::after {
   transition: all 0.3s ease;
   animation: fadeInUp 0.8s ease-out both;
 }
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
