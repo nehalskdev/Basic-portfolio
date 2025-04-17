@@ -241,6 +241,59 @@ footer {
 .dark-theme a:hover {
   color: #3e8e41;
 }
+/* Add this to your existing CSS */
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  #theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 460px) {
+  #theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    top: 10px;
+    right: 10px;
+  }
+
+  /* Ensure toggle doesn't overlap with header content on mobile */
+  header {
+    padding-top: 50px; /* Add space for the toggle */
+  }
+}
 
 @media (max-width: 460px) {
   header {

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   themeToggleBtn.style.border = "none";
   themeToggleBtn.style.fontSize = "2rem";
   themeToggleBtn.style.cursor = "pointer";
+  themeToggleBtn.style.transition = "opacity 0.3s ease";
   document.body.appendChild(themeToggleBtn);
 
   // Check for saved theme preference or use preferred color scheme
