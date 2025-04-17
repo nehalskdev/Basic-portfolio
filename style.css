@@ -84,7 +84,11 @@ header::after {
 }
 
 .header-text {
-  line-height: 1rem;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 .profile-image {
   width: 150px;
