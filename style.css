@@ -74,7 +74,8 @@ h2 {
   position: relative;
 }
 .share-icon {
-  width: 2%;
+  width: 24px;
+  height: 24px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -211,12 +212,9 @@ footer {
   color: #e0e0e0;
 }
 
-.dark-theme header {
-  background-color: #1e3a1e;
-}
-
+.dark-theme header,
 .dark-theme footer {
-  background-color: #1e3a1e;
+  background-color: var(--header-bg);
 }
 
 .dark-theme .project {
@@ -303,7 +301,7 @@ footer {
     width: 20%;
   }
   .share-icon {
-    width: 6%;
+    width: clamp(20px, 2%, 24px);
   }
   .social-icon {
     width: 10%;
