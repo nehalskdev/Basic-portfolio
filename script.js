@@ -120,9 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(
     "footer p"
   ).innerHTML = `&copy; ${yearSpan.textContent} Nehal Shaikh. All rights reserved.`;
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // About me section typing animation from here
+
   const aboutMeText = `👋 I'm Nehal Shaikh, a dedicated Javascript enthusiast on a mission to harness the power of coding for transformative digital experiences. With a rich background of three years in data management within the non-IT sector, I'm now embarking on an exciting journey towards frontend development.
 
 Driven by a fervent passion for technology and a relentless pursuit of excellence, I'm immersing myself in the dynamic world of web development. Every line of code I write is fueled by a desire to craft seamless user interfaces, elevate user experiences, and push the boundaries of innovation.
@@ -135,6 +135,8 @@ Join me on this exhilarating journey as I continue to learn, grow, and make an i
   const typingButton = document.querySelector(".typing-trigger");
   let i = 0;
   const speed = 20;
+
+  document.querySelector(".typing-trigger").classList.add("pulse");
 
   typingButton.addEventListener("click", function () {
     this.classList.add("hide");
