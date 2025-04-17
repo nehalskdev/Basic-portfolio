@@ -1,6 +1,4 @@
-// Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Dark/Light theme toggle functionality
   const themeToggleBtn = document.createElement("button");
   themeToggleBtn.id = "theme-toggle";
   themeToggleBtn.innerHTML = "🌙";
@@ -16,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
   themeToggleBtn.style.transition = "opacity 0.3s ease";
   document.body.appendChild(themeToggleBtn);
 
-  // Check for saved theme preference or use preferred color scheme
   const currentTheme =
     localStorage.getItem("theme") ||
     (window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -27,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     themeToggleBtn.innerHTML = "🌞";
   }
 
-  // Theme toggle button click handler
   themeToggleBtn.addEventListener("click", function () {
     document.body.classList.toggle("dark-theme");
     const theme = document.body.classList.contains("dark-theme")
@@ -37,7 +33,39 @@ document.addEventListener("DOMContentLoaded", function () {
     themeToggleBtn.innerHTML = theme === "dark" ? "🌞" : "🌙";
   });
 
-  // Smooth scrolling for anchor links
+  let lastScrollPosition = 0;
+  const scrollThreshold = 100;
+
+  function handleScroll() {
+    const currentScrollPosition = window.scrollY || window.pageYOffset;
+
+    if (
+      currentScrollPosition > lastScrollPosition &&
+      currentScrollPosition > scrollThreshold
+    ) {
+      themeToggleBtn.classList.add("hidden");
+    } else {
+      themeToggleBtn.classList.remove("hidden");
+    }
+
+    lastScrollPosition = currentScrollPosition;
+  }
+
+  function throttle(callback, limit) {
+    let waiting = false;
+    return function () {
+      if (!waiting) {
+        callback.apply(this, arguments);
+        waiting = true;
+        setTimeout(() => {
+          waiting = false;
+        }, limit);
+      }
+    };
+  }
+
+  window.addEventListener("scroll", throttle(handleScroll, 100));
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -53,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Project card hover effects
   const projects = document.querySelectorAll(".project");
   projects.forEach((project) => {
     project.addEventListener("mouseenter", () => {
@@ -67,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Animation for sections when they come into view
   const sections = document.querySelectorAll("section");
   const options = {
     threshold: 0.1,
@@ -89,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(section);
   });
 
-  // Current year in footer
   const yearSpan = document.createElement("span");
   yearSpan.textContent = new Date().getFullYear();
   document.querySelector(
