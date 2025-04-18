@@ -568,6 +568,13 @@ footer {
   transition: transform 0.3s ease;
 }
 
+#about-me-content {
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
 /* Hover Effects */
 .resume-download-btn:hover {
   background: white;
