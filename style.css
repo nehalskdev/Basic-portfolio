@@ -275,22 +275,6 @@ h2 {
   animation: buttonExit 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
-@keyframes buttonExit {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  30% {
-    transform: translate(-50%, -50%) scale(1.15);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate(-50%, -180%) scale(0.4);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 /* Pulse Animation (Optional - can add to button when page loads) */
 @keyframes pulseGlow {
   0% {
@@ -511,11 +495,6 @@ footer {
   .header-text p {
     font-size: 1.1rem;
   }
-}
-
-.dark-theme {
-  background-color: #121212;
-  color: #e0e0e0;
 }
 
 .dark-theme header,
