@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   let lastScrollPosition = 0;
-  const scrollThreshold = 100;
+  const scrollThreshold = 80;
 
   function handleScroll() {
     const currentScrollPosition = window.scrollY || window.pageYOffset;
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  window.addEventListener("scroll", throttle(handleScroll, 100));
+  window.addEventListener("scroll", throttle(handleScroll, 80));
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
