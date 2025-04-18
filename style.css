@@ -630,9 +630,7 @@ footer {
     justify-content: center;
     padding-bottom: 1.5rem;
   }
-}
 
-@media (max-width: 460px) {
   header {
     display: flex;
     flex-direction: row;
