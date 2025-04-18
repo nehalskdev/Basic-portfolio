@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   themeToggleBtn.innerHTML = "🌙";
   themeToggleBtn.title = "Toggle Dark Mode";
   themeToggleBtn.style.position = "fixed";
-  themeToggleBtn.style.top = "70px";
+  themeToggleBtn.style.top = "20px";
   themeToggleBtn.style.right = "20px";
   themeToggleBtn.style.zIndex = "1000";
   themeToggleBtn.style.background = "transparent";
